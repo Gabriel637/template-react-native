@@ -8,7 +8,7 @@ function Tabs({texts, textsInfo, color, textsColor}) {
     <>
       <TabsBox>
         <MenuIconBox>
-          <Icon raised name="home" color="#f50" />
+          <Icon raised name="home" />
         </MenuIconBox>
         <MenuIconBox></MenuIconBox>
         <MenuIconBox></MenuIconBox>

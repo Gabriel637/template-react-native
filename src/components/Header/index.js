@@ -1,13 +1,15 @@
-import {PropTypes} from 'prop-types';
 import React from 'react';
+import {PropTypes} from 'prop-types';
+import TextInput from '../TextInput';
 import {HeaderBox, MenuIconBox, SearchBox} from './styles';
 
 function Header({texts, textsInfo, color, textsColor}) {
   return (
     <>
       <HeaderBox>
-        <MenuIconBox></MenuIconBox>
-        <SearchBox></SearchBox>
+        <SearchBox>
+          <TextInput />
+        </SearchBox>
       </HeaderBox>
     </>
   );
