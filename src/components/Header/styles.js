@@ -18,5 +18,6 @@ export const MenuIconBox = styled.View`
 
 export const SearchBox = styled.View`
   height: ${metrics.widthPercentageToDP(40)}px;
-  width: ${metrics.widthPercentageToDP(260)}px;
+  width: ${metrics.widthPercentageToDP(328)}px;
+  align-items: center;
 `;
