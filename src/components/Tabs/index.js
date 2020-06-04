@@ -1,4 +1,3 @@
-import {PropTypes} from 'prop-types';
 import React from 'react';
 import {TabsBox, MenuIconBox, TextIcon} from './styles';
 import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
@@ -12,13 +11,23 @@ function Tabs() {
       text: 'home',
     },
     {
-      name: 'book-multiple',
+      name: 'book-open-variant',
       text: 'my books',
+      handler: () => alert(1),
+    },
+    {
+      name: 'cart',
+      text: 'store',
       handler: () => alert(1),
     },
     {
       name: 'pencil',
       text: 'write',
+      handler: () => alert(1),
+    },
+    {
+      name: 'settings',
+      text: 'settings',
       handler: () => alert(1),
     },
   ];
@@ -29,7 +38,7 @@ function Tabs() {
           <MenuIconBox>
             <Icon
               name={icon.name}
-              size={metrics.widthPercentageToDP(40)}
+              size={metrics.widthPercentageToDP(30)}
               color={icon.color ? icon.color : colors.gray3}
               onPress={icon.handler ? icon.handler : null}
             />
