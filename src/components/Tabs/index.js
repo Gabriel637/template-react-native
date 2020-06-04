@@ -1,43 +1,48 @@
 import {PropTypes} from 'prop-types';
 import React from 'react';
-import {TabsBox, MenuIconBox, SearchBox} from './styles';
-import {Icon} from 'react-native-elements';
+import {TabsBox, MenuIconBox, TextIcon} from './styles';
+import {MaterialCommunityIcons as Icon} from '../../styles/LoadFonts';
+import {colors} from '../../styles/Colors';
+import {metrics} from '../../styles/Metrics';
 
-function Tabs({texts, textsInfo, color, textsColor}) {
+function Tabs() {
+  const icons = [
+    {
+      name: 'home',
+      text: 'home',
+    },
+    {
+      name: 'book-multiple',
+      text: 'my books',
+      handler: () => alert(1),
+    },
+    {
+      name: 'pencil',
+      text: 'write',
+      handler: () => alert(1),
+    },
+  ];
   return (
     <>
       <TabsBox>
-        <MenuIconBox>
-          <Icon raised name="home" />
-        </MenuIconBox>
-        <MenuIconBox></MenuIconBox>
-        <MenuIconBox></MenuIconBox>
+        {icons.map(icon => (
+          <MenuIconBox>
+            <Icon
+              name={icon.name}
+              size={metrics.widthPercentageToDP(40)}
+              color={icon.color ? icon.color : colors.gray3}
+              onPress={icon.handler ? icon.handler : null}
+            />
+            <TextIcon>{icon.text}</TextIcon>
+          </MenuIconBox>
+        ))}
       </TabsBox>
     </>
   );
 }
 
-Tabs.propTypes = {
-  navigation: PropTypes.shape({}),
-  texts: PropTypes.shape([
-    {
-      text: PropTypes.string,
-      breakLine: PropTypes.bool,
-    },
-  ]).isRequired,
-  textsInfo: PropTypes.shape({
-    length: PropTypes.func,
-    map: PropTypes.func,
-  }),
-  color: PropTypes.string,
-  textsColor: PropTypes.string,
-};
+Tabs.propTypes = {};
 
-Tabs.defaultProps = {
-  navigation: {},
-  textsInfo: {},
-  color: '',
-  textsColor: '',
-};
+Tabs.defaultProps = {};
 
 export default Tabs;

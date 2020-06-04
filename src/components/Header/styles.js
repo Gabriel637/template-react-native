@@ -1,12 +1,10 @@
-import {colors} from '../../styles/Colors';
 import {metrics} from '../../styles/Metrics';
-import styled, {css} from 'styled-components/native';
+import styled from 'styled-components/native';
 
 export const HeaderBox = styled.View`
-  margin-top: ${metrics.widthPercentageToDP(30)}px;
+  margin-top: ${metrics.widthPercentageToDP(60)}px;
   padding: ${metrics.widthPercentageToDP(10)}px;
   height: ${metrics.widthPercentageToDP(60)}px;
-  background: red;
   flex-direction: row;
   justify-content: space-around;
 `;

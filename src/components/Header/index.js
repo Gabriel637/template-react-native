@@ -1,41 +1,21 @@
 import React from 'react';
-import {PropTypes} from 'prop-types';
 import TextInput from '../TextInput';
-import {HeaderBox, MenuIconBox, SearchBox} from './styles';
+import {HeaderBox, SearchBox} from './styles';
 
-function Header({texts, textsInfo, color, textsColor}) {
+function Header({}) {
   return (
     <>
       <HeaderBox>
         <SearchBox>
-          <TextInput />
+          <TextInput label={'Pesquisar'} />
         </SearchBox>
       </HeaderBox>
     </>
   );
 }
 
-Header.propTypes = {
-  navigation: PropTypes.shape({}),
-  texts: PropTypes.shape([
-    {
-      text: PropTypes.string,
-      breakLine: PropTypes.bool,
-    },
-  ]).isRequired,
-  textsInfo: PropTypes.shape({
-    length: PropTypes.func,
-    map: PropTypes.func,
-  }),
-  color: PropTypes.string,
-  textsColor: PropTypes.string,
-};
+Header.propTypes = {};
 
-Header.defaultProps = {
-  navigation: {},
-  textsInfo: {},
-  color: '',
-  textsColor: '',
-};
+Header.defaultProps = {};
 
 export default Header;
